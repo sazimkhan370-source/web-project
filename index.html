@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Management System</h1>
+        <p>Manage student records easily</p>
+    </header>
+
+    <main class="container">
+
+        <section class="summary">
+            <div class="card">
+                <h3>Total Students</h3>
+                <p id="totalStudents">0</p>
+            </div>
+            <div class="card">
+                <h3>Average Marks</h3>
+                <p id="averageMarks">0</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2 id="formTitle">Add New Student</h2>
+
+            <form id="studentForm">
+                <input type="hidden" id="editIndex" value="-1">
+
+                <div class="form-grid">
+                    <div>
+                        <label for="name">Student Name</label>
+                        <input type="text" id="name"
+                               placeholder="Enter student name" required>
+                    </div>
+
+                    <div>
+                        <label for="roll">Roll Number</label>
+                        <input type="text" id="roll"
+                               placeholder="Enter roll number" required>
+                    </div>
+
+                    <div>
+                        <label for="course">Course</label>
+                        <input type="text" id="course"
+                               placeholder="Enter course name" required>
+                    </div>
+
+                    <div>
+                        <label for="marks">Marks (out of 100)</label>
+                        <input type="number" id="marks"
+                               min="0" max="100" step="any"
+                               placeholder="Enter marks" required>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="saveButton">
+                        Add Student
+                    </button>
+                    <button type="button" id="cancelButton"
+                            class="secondary" hidden>
+                        Cancel Edit
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="records">
+            <div class="records-heading">
+                <h2>Student Records</h2>
+                <input type="search" id="search"
+                       placeholder="Search students...">
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No student records found.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Management System | HTML, CSS & JavaScript</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
